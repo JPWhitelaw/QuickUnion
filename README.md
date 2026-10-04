@@ -1,5 +1,5 @@
 # QuickUnion
-An attempt / study of the QuickUnion method
+An attempt / study of the QuickUnion algorithm
 
 
 Following the Coursera course for Data Algorithms and decided to put my implementations on here.
