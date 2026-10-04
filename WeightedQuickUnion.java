@@ -3,11 +3,14 @@ import java.util.Scanner;
 public class WeightedQuickUnion{
 
     int id[];
+    int size[];
 
     public WeightedQuickUnion(int n){
         id = new int[n]; //set the size of the array
+        size = new int[n]; //set the size of the size array
         for (int i = 0; i < n; i++){
             id[i] = i; //populate the array with index values equal to passed value size
+            size[i] = 1; //initialize the size of each component to 1
         }
     }
 
@@ -41,8 +44,18 @@ public class WeightedQuickUnion{
         if (connected(p, q) == false){
             int rootP = find(p);
             int rootQ = find(q);
-            id[rootP] = rootQ; //set the root of p to the root of q
 
+            int rootPSize = size[rootP]; //get the size of the root of p
+            int rootQSize = size[rootQ]; //get the size of the root of q
+
+            if (rootPSize < rootQSize){
+                id[rootP] = rootQ; //set the root of p to the root of q
+                size[rootQ] += size[rootP]; //add the size of p to the size of q
+            }
+            else{
+                id[rootQ] = rootP; //set the root of q to the root of p
+                size[rootP] += size[rootQ]; //add the size of q to the size of p
+            }
 
         }
 
