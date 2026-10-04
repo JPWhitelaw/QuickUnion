@@ -47,10 +47,13 @@ public class DynamicQuickUnion{
 
     public static void main(String[] args){
         Scanner input = new Scanner(System.in);
+        System.out.println("Enter the number of elements");
+        
         DynamicQuickUnion dq = new DynamicQuickUnion(input.nextInt());
-        input.close();
+     
 
         System.out.println("What operation do you want to use? (union or connected or find)");
+        System.out.println("type exit to exit the program");
 
         String operation = input.next();
 
@@ -76,6 +79,10 @@ public class DynamicQuickUnion{
             System.out.println(dq.find(p));
         }
 
-    }
+        if (operation.equals("exit")){
+            input.close();
+            System.exit(0);
 
+    }
+    }
 }
