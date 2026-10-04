@@ -54,9 +54,10 @@ public class DynamicQuickUnion{
         System.out.println("What operation do you want to use? (union or connected or find)");
         System.out.println("type exit to exit the program");
 
-        String operation = input.next();
+        String operation = "";
 
         while (!operation.equals("exit")){
+            operation = input.next();
             if (operation.equals("union")){
                 System.out.println("Enter the first number");
                 int p = input.nextInt();
