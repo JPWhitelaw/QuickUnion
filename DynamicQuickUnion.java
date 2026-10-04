@@ -15,8 +15,10 @@ public class DynamicQuickUnion{
         if (p < 0 || p >= id.length){
             throw new IllegalArgumentException("Index " + p + " is not between 0 and " + (id.length - 1));
         }
+        while (p != id[p]){
+            p = id[p];
+        }
        return id[p];
-
     }
 
     public boolean connected(int p, int q){
