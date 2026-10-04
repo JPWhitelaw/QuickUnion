@@ -48,7 +48,6 @@ public class DynamicQuickUnion{
     public static void main(String[] args){
         Scanner input = new Scanner(System.in);
         System.out.println("Enter the number of elements");
-        
         DynamicQuickUnion dq = new DynamicQuickUnion(input.nextInt());
      
 
@@ -57,32 +56,36 @@ public class DynamicQuickUnion{
 
         String operation = input.next();
 
-        if (operation.equals("union")){
-            System.out.println("Enter the first number");
-            int p = input.nextInt();
-            System.out.println("Enter the second number");
-            int q = input.nextInt();
-            dq.union(p, q);
-        }
+        while (!operation.equals("exit")){
+            if (operation.equals("union")){
+                System.out.println("Enter the first number");
+                int p = input.nextInt();
+                System.out.println("Enter the second number");
+                int q = input.nextInt();
+                dq.union(p, q);
+            }
 
-        if (operation.equals("connected")){
-            System.out.println("Enter the first number");
-            int p = input.nextInt();
-            System.out.println("Enter the second number");
-            int q = input.nextInt();
-            System.out.println(dq.connected(p, q));
-        }
+            if (operation.equals("connected")){
+                System.out.println("Enter the first number");
+                int p = input.nextInt();
+                System.out.println("Enter the second number");
+                int q = input.nextInt();
+                System.out.println(dq.connected(p, q));
+            }
 
-        if (operation.equals("find")){
-            System.out.println("Enter the number");
-            int p = input.nextInt();
-            System.out.println(dq.find(p));
-        }
+            if (operation.equals("find")){
+                System.out.println("Enter the number");
+                int p = input.nextInt();
+                System.out.println(dq.find(p));
+            }
 
-        if (operation.equals("exit")){
-            input.close();
-            System.exit(0);
+            if (operation.equals("exit")){
+                input.close();
+                System.exit(0);
 
+        }        
+    
     }
-    }
+    
+}
 }
