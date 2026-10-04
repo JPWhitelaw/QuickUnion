@@ -51,7 +51,31 @@ public class DynamicQuickUnion{
         input.close();
 
         System.out.println("What operation do you want to use? (union or connected or find)");
-        
+
+        String operation = input.next();
+
+        if (operation.equals("union")){
+            System.out.println("Enter the first number");
+            int p = input.nextInt();
+            System.out.println("Enter the second number");
+            int q = input.nextInt();
+            dq.union(p, q);
+        }
+
+        if (operation.equals("connected")){
+            System.out.println("Enter the first number");
+            int p = input.nextInt();
+            System.out.println("Enter the second number");
+            int q = input.nextInt();
+            System.out.println(dq.connected(p, q));
+        }
+
+        if (operation.equals("find")){
+            System.out.println("Enter the number");
+            int p = input.nextInt();
+            System.out.println(dq.find(p));
+        }
+
     }
 
 }
